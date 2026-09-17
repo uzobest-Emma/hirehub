@@ -39,3 +39,17 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+node_modules/
+dist/
+.env
+# AI/editor tooling
+.agents/
+.claude/
+.cursor/
+.devin/
+
+# Generated Prisma client
+/generated/
+
+# Local/legacy Prisma migration artifacts
+/migrations/

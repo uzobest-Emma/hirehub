@@ -1,0 +1,98 @@
+// use prisma-next
+
+types {
+  Uuid = String
+}
+
+enum UserRole {
+  JOB_SEEKER
+  EMPLOYER
+  ADMIN
+}
+
+model User {
+  id          Uuid     @id @default(uuid())
+  fullName    String?
+  companyName String?
+  email       String   @unique
+  password    String
+  role        UserRole @default(JOB_SEEKER)
+
+  phone       String?
+  location    String?
+  bio         String?
+  skills      String?
+  resumeUrl   String?
+  website     String?
+  companyLogo String?
+
+  createdAt DateTime @default(now())
+
+  applications Application[]
+  savedJobs    SavedJob[]
+  jobs         Job[]
+
+  @@map("user")
+}
+
+model Job {
+  id           Uuid   @id @default(uuid())
+  title        String
+  company      String
+  location     String
+  type         String
+  category     String
+  salary       String
+  salaryNumber Int
+  experience   String
+
+  description      String
+  responsibilities String
+  requirements     String
+
+  employerId Uuid?
+  employer   User? @relation(fields: [employerId], references: [id])
+
+  createdAt DateTime @default(now())
+
+  applications Application[]
+  savedBy      SavedJob[]
+
+  @@map("job")
+}
+
+model Application {
+  id          Uuid   @id @default(uuid())
+  fullName    String
+  email       String
+  phone       String
+  location    String
+  resumeUrl   String
+  coverLetter String
+
+  status String @default("Pending")
+
+  applicantId Uuid?
+  applicant   User? @relation(fields: [applicantId], references: [id])
+
+  jobId Uuid
+  job   Job @relation(fields: [jobId], references: [id])
+
+  createdAt DateTime @default(now())
+
+  @@map("application")
+}
+
+model SavedJob {
+  id     Uuid @id @default(uuid())
+  userId Uuid
+  jobId  Uuid
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  job  Job  @relation(fields: [jobId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+
+  @@unique([userId, jobId])
+  @@map("saved_job")
+}
