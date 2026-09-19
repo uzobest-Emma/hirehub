@@ -2,12 +2,18 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useTheme } from "next-themes";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   const closeMenu = () => {
     setMenuOpen(false);
+  };
+
+  const toggleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
   };
 
   return (
@@ -29,6 +35,18 @@ export default function Navbar() {
 
         {/* DESKTOP ACTIONS */}
         <div className="desktop-actions">
+
+          {/* THEME BUTTON */}
+          <button
+            type="button"
+            className="theme-toggle"
+            onClick={toggleTheme}
+            aria-label="Toggle dark and light mode"
+            title="Toggle theme"
+          >
+            {theme === "dark" ? "☀️" : "🌙"}
+          </button>
+
           <Link href="/login" className="login-link">
             Login
           </Link>
@@ -68,6 +86,17 @@ export default function Navbar() {
           <Link href="/career-advice" onClick={closeMenu}>
             Career Advice
           </Link>
+
+          {/* MOBILE THEME BUTTON */}
+          <button
+            type="button"
+            className="mobile-theme-button"
+            onClick={toggleTheme}
+          >
+            {theme === "dark"
+              ? "☀️ Switch to Light Mode"
+              : "🌙 Switch to Dark Mode"}
+          </button>
 
           <div className="mobile-divider" />
 

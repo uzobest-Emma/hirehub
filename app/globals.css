@@ -6585,3 +6585,246 @@ input {
     font-size: 28px;
   }
 }
+/* =========================================
+   DARK / LIGHT THEME
+========================================= */
+
+html {
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+/* Theme toggle */
+
+.theme-toggle {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #111827;
+  font-size: 17px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.theme-toggle:hover {
+  background: #f8fafc;
+  transform: translateY(-1px);
+}
+
+/* Mobile theme button */
+
+.mobile-theme-button {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #111827;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+}
+
+/* =========================================
+   DARK MODE
+========================================= */
+
+html.dark body {
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+html.dark .navbar {
+  background: #111827;
+  border-bottom-color: #1f2937;
+}
+
+html.dark .navbar-logo {
+  color: #ffffff;
+}
+
+html.dark .desktop-nav a,
+html.dark .login-link {
+  color: #d1d5db;
+}
+
+html.dark .desktop-nav a:hover,
+html.dark .login-link:hover {
+  color: #60a5fa;
+}
+
+html.dark .theme-toggle {
+  background: #1f2937;
+  border-color: #374151;
+  color: #ffffff;
+}
+
+html.dark .theme-toggle:hover {
+  background: #374151;
+}
+
+html.dark .mobile-theme-button {
+  background: #1f2937;
+  border-color: #374151;
+  color: #ffffff;
+}
+
+/* Common page backgrounds */
+
+html.dark .saved-jobs-page,
+html.dark .manage-jobs-page,
+html.dark .settings-page,
+html.dark .change-password-page {
+  background: #0f172a;
+}
+
+/* Common cards */
+
+html.dark .saved-job-card,
+html.dark .manage-job-card,
+html.dark .settings-card,
+html.dark .change-password-card,
+html.dark .saved-jobs-empty,
+html.dark .manage-jobs-empty,
+html.dark .settings-sidebar {
+  background: #111827;
+  border-color: #374151;
+  box-shadow: none;
+}
+
+/* Headings */
+
+html.dark .saved-jobs-header h1,
+html.dark .manage-jobs-header h1,
+html.dark .settings-header h1,
+html.dark .change-password-header h1,
+html.dark .saved-job-info h2,
+html.dark .manage-job-info h2,
+html.dark .settings-card-header h2,
+html.dark .settings-option h3,
+html.dark .notification-option h3,
+html.dark .danger-option h3 {
+  color: #f9fafb;
+}
+
+/* Secondary text */
+
+html.dark .saved-jobs-header p:last-child,
+html.dark .saved-job-company,
+html.dark .saved-job-meta,
+html.dark .manage-jobs-header p,
+html.dark .manage-job-meta,
+html.dark .manage-job-date,
+html.dark .settings-header > p:last-child,
+html.dark .settings-card-header p,
+html.dark .settings-option p,
+html.dark .notification-option p,
+html.dark .danger-option p,
+html.dark .change-password-header > p:last-child {
+  color: #9ca3af;
+}
+
+/* Settings */
+
+html.dark .settings-sidebar a {
+  color: #9ca3af;
+}
+
+html.dark .settings-sidebar a:hover {
+  background: #1f2937;
+  color: #ffffff;
+}
+
+html.dark .settings-sidebar .settings-nav-active {
+  background: #1e3a8a;
+  color: #93c5fd;
+}
+
+html.dark .settings-field label,
+html.dark .change-password-field label {
+  color: #d1d5db;
+}
+
+html.dark .settings-field input,
+html.dark .change-password-field input {
+  background: #1f2937;
+  border-color: #374151;
+  color: #f9fafb;
+}
+
+html.dark .settings-field input:disabled {
+  background: #111827;
+  color: #6b7280;
+}
+
+html.dark .settings-account-details,
+html.dark .applicant-count {
+  background: #1f2937;
+}
+
+html.dark .settings-account-details strong,
+html.dark .settings-option h3,
+html.dark .notification-option h3,
+html.dark .danger-option h3 {
+  color: #f9fafb;
+}
+
+html.dark .settings-secondary-button {
+  border-color: #374151;
+  color: #f9fafb;
+}
+
+html.dark .settings-secondary-button:hover {
+  background: #1f2937;
+}
+
+/* Borders */
+
+html.dark .settings-option,
+html.dark .notification-option,
+html.dark .danger-option {
+  border-top-color: #374151;
+}
+
+/* Saved job logo */
+
+html.dark .saved-job-logo,
+html.dark .manage-job-logo,
+html.dark .saved-jobs-empty .empty-icon,
+html.dark .change-password-icon {
+  background: #1e3a8a;
+  color: #93c5fd;
+}
+
+/* Buttons */
+
+html.dark .manage-edit-button {
+  background: #f9fafb;
+  color: #111827;
+}
+
+/* Danger area */
+
+html.dark .danger-card {
+  border-color: #7f1d1d;
+}
+
+html.dark .delete-account-button {
+  background: #450a0a;
+  border-color: #7f1d1d;
+  color: #fca5a5;
+}
+
+html.dark .delete-account-button:hover {
+  background: #7f1d1d;
+}

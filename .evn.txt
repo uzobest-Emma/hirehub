@@ -1,0 +1,3 @@
+DATABASE_URL="postgresql://neondb_owner:npg_OhE3vW8twzDo@ep-blue-band-aerd8pa6-pooler.c-2.us-east-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require"
+JWT_SECRET="your-super-long-random-secret-string"
+AUTH_SECRET="h2sEn-fmakslsTdSe-rPAieZVio4IgoB6hRTcl9-5OE"

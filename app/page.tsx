@@ -45,32 +45,6 @@ const categories = [
 export default function Home() {
   return (
     <main>
-      {/* NAVBAR */}
-      <nav className="navbar">
-        <div className="container navbar-inner">
-          <a href="/" className="logo">
-            Hire<span>Hub</span>
-          </a>
-
-          <div className="nav-links">
-            <a href="/">Home</a>
-            <a href="/jobs">Find Jobs</a>
-            <a href="/companies">Companies</a>
-            <a href="/career-advice">Career Advice</a>
-          </div>
-
-          <div className="nav-actions">
-            <a href="/login" className="login-btn">
-              Login
-            </a>
-
-            <a href="/register" className="signup-btn">
-              Sign Up
-            </a>
-          </div>
-        </div>
-      </nav>
-
       {/* HERO */}
       <section className="hero">
         <div className="hero-background"></div>
@@ -178,7 +152,11 @@ export default function Home() {
 
           <div className="category-grid">
             {categories.map((category) => (
-              <a href="/jobs" className="category-card" key={category.name}>
+              <a
+                href="/jobs"
+                className="category-card"
+                key={category.name}
+              >
                 <div className="category-icon">{category.icon}</div>
 
                 <div>
@@ -270,6 +248,7 @@ export default function Home() {
           <div className="employer-visual">
             <div className="visual-card card-one">
               <span>✓</span>
+
               <div>
                 <strong>Candidate matched</strong>
                 <small>Frontend Developer</small>
@@ -278,15 +257,14 @@ export default function Home() {
 
             <div className="visual-card card-two">
               <span>★</span>
+
               <div>
                 <strong>98% Match</strong>
                 <small>Excellent candidate</small>
               </div>
             </div>
 
-            <div className="visual-circle">
-              👤
-            </div>
+            <div className="visual-circle">👤</div>
           </div>
         </div>
       </section>
