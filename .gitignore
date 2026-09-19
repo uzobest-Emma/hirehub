@@ -53,3 +53,5 @@ dist/
 
 # Local/legacy Prisma migration artifacts
 /migrations/
+.env
+.env.*
